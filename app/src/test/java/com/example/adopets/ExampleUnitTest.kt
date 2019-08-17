@@ -1,17 +1,25 @@
 package com.example.adopets
 
+import com.example.adopets.config.FirebaseConfig
+import com.example.adopets.model.Doador
+import com.google.firebase.FirebaseApp
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import org.junit.Test
 
-import org.junit.Assert.*
-
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
 class ExampleUnitTest {
+
+    private lateinit var database: DatabaseReference
+
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun insereUsuario() {
+        database = FirebaseDatabase.getInstance().reference
+        var usuarios : DatabaseReference = database.child("usuarios")
+
+        val doador = Doador()
+        doador.nome = "Eddunic"
+
+        usuarios.child("001").setValue(doador)
     }
+
 }
