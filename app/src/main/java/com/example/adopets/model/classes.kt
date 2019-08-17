@@ -16,13 +16,13 @@ open class Usuario(
     open var cep: String = ""
 )
 
-class Doador() : Usuario()
+class Doador(): Usuario()
 
-class Adotante() : Usuario()
+class Adotante(): Usuario()
 
-class Voluntario(var pontuacao: Float = 0F) : Usuario()
+class Voluntario(var pontuacao: Float = 0F): Usuario()
 
-class Contratante() : Usuario()
+class Contratante(): Usuario()
 
 class Processo(
     var codigo: Long = 0L,
