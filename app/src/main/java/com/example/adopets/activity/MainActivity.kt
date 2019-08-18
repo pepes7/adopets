@@ -51,10 +51,7 @@ class MainActivity : AppCompatActivity() {
             auth.signInWithEmailAndPassword(email, senha)
                 .addOnCompleteListener(this, OnCompleteListener<AuthResult> { task ->
                     if (task.isSuccessful) {
-                        var intent = Intent(this, HomeActivity::class.java)
-                        intent.putExtra("id", auth.currentUser?.email)
-                        startActivity(intent)
-
+                        startActivity(Intent(applicationContext, HomeActivity::class.java))
                     } else {
                         try {
                             throw task.exception!!
@@ -76,8 +73,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun telaCadastro(view: View) {
-        val intent = Intent(this, CadastroActivity::class.java)
-        startActivity(intent)
+        startActivity(Intent(applicationContext, CadastroActivity::class.java))
     }
 
 }

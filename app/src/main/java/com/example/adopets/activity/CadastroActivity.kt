@@ -44,7 +44,7 @@ class CadastroActivity : AppCompatActivity() {
         }
 
         if (valido) {
-            var usuario = Usuario()
+            val usuario = Usuario()
             usuario.email = email
             usuario.senha = senha
             //cria um usuario com email e senha
