@@ -16,13 +16,29 @@ open class Usuario(
     open var cep: String = ""
 )
 
-class Doador() : Usuario()
+class Doador(override var email: String = "", override var senha: String = "",
+             override var dataNasc: Date = Date(), override var foto: ByteArray = "".toByteArray(),
+             override var telefone: String = "", override var nome: String = "", override var bairro: String = "",
+             override var rua: String = "", override var numero: String = "", override var complemento: String = "",
+             override var cep: String = ""): Usuario(email, senha, dataNasc, foto, telefone, nome, bairro, rua, numero, complemento, cep)
 
-class Adotante() : Usuario()
+class Adotante(override var email: String = "", override var senha: String = "",
+               override var dataNasc: Date = Date(), override var foto: ByteArray = "".toByteArray(),
+               override var telefone: String = "", override var nome: String = "", override var bairro: String = "",
+               override var rua: String = "", override var numero: String = "", override var complemento: String = "",
+               override var cep: String = ""): Usuario(email, senha, dataNasc, foto, telefone, nome, bairro, rua, numero, complemento, cep)
 
-class Voluntario(var pontuacao: Float = 0F) : Usuario()
+class Voluntario(override var email: String = "", override var senha: String = "",
+                 override var dataNasc: Date = Date(), override var foto: ByteArray = "".toByteArray(),
+                 override var telefone: String = "", override var nome: String = "", override var bairro: String = "",
+                 override var rua: String = "", override var numero: String = "", override var complemento: String = "",
+                 override var cep: String = "", var pontuacao: Float = 0F): Usuario(email, senha, dataNasc, foto, telefone, nome, bairro, rua, numero, complemento, cep)
 
-class Contratante() : Usuario()
+class Contratante(override var email: String = "", override var senha: String = "",
+                  override var dataNasc: Date = Date(), override var foto: ByteArray = "".toByteArray(),
+                  override var telefone: String = "", override var nome: String = "", override var bairro: String = "",
+                  override var rua: String = "", override var numero: String = "", override var complemento: String = "",
+                  override var cep: String = ""): Usuario(email, senha, dataNasc, foto, telefone, nome, bairro, rua, numero, complemento, cep)
 
 class Processo(
     var codigo: Long = 0L,

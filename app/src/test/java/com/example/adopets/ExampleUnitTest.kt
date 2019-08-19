@@ -1,25 +1,27 @@
 package com.example.adopets
 
-import com.example.adopets.config.FirebaseConfig
 import com.example.adopets.model.Doador
-import com.google.firebase.FirebaseApp
+import com.example.adopets.model.Usuario
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import org.junit.Test
 
 class ExampleUnitTest {
 
-    private lateinit var database: DatabaseReference
+    private lateinit var referencia: DatabaseReference
 
     @Test
     fun insereUsuario() {
-        database = FirebaseDatabase.getInstance().reference
-        var usuarios : DatabaseReference = database.child("usuarios")
+        referencia = FirebaseDatabase.getInstance().reference
+        var usuarios = referencia.child("usuarios")
+
+        val usuario = Usuario()
+        usuario.email = "Eddunic"
 
         val doador = Doador()
-        doador.nome = "Eddunic"
+        doador.nome = "a"
 
-        usuarios.child("001").setValue(doador)
+        usuarios.push().setValue(usuario)
     }
 
 }
