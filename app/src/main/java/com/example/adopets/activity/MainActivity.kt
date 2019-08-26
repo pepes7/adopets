@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import com.example.adopets.R
 import com.google.firebase.auth.FirebaseAuth
@@ -92,7 +93,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun telaCadastro() {
+    fun telaCadastro(view: View) {
         startActivity(Intent(applicationContext, CadastroActivity::class.java))
     }
 
