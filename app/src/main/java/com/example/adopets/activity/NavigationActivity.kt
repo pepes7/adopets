@@ -16,7 +16,7 @@ class NavigationActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_pets -> {
-                val petsFragment = PetsFragment.newInstance()
+                val petsFragment = PetsFragment()
                 openFragment(petsFragment)
                 return@OnNavigationItemSelectedListener true
             }
